@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Interactive Page</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourtwitterhandle">
+    <meta name="twitter:title" content="Check out this interactive page!">
+    <meta name="twitter:description" content="Click the button to see a random word.">
+    <meta name="twitter:image" content="URL_TO_IMAGE">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .random-word {
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button" onclick="showRandomWord()">Show Random Word</button>
+        <div class="random-word" id="random-word"></div>
+    </div>
+
+    <script>
+        const words = ["Harmony", "Balance", "Serenity", "Peace", "Joy", "Euphoria", "Tranquility", "Bliss", "Ecstasy"];
+
+        function showRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const randomWord = words[randomIndex];
+            document.getElementById('random-word').innerText = randomWord;
+        }
+    </script>
+</body>
